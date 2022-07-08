@@ -1,15 +1,18 @@
 import React from "react";
 import { useState } from "react";
 
+// Importing icons
 import { HiMenuAlt4 } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
 
+// Importing logo
 import logo from "../../images/logo.png";
 
 const NavBarItem = ({ title, classprops }) => (
   <li className={`mx-4 cursor-pointer ${classprops}`}>{title}</li>
 );
 
+// For mobile view
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = React.useState(false);
 
@@ -19,6 +22,7 @@ const Navbar = () => {
         <img src={logo} alt="logo" className="w-32 cursor-pointer" />
       </div>
       <ul className="text-white md:flex hidden list-none flex-row justify-between items-center flex-initial">
+        {/* Mapping over the nav bar items like a loop */}
         {["Market", "Exchange", "Tutorials", "Wallets"].map((item, index) => (
           <NavBarItem key={item + index} title={item} />
         ))}
